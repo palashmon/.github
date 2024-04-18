@@ -1,0 +1,5 @@
+{
+	"name": "Approve Renovate PR Configuration",
+	"description": "CI Starter workflow to approve Renovate PRs automatically",
+	"categories": ["Renovate", "Continuous-integration"]
+}

@@ -1,0 +1,17 @@
+name: Auto-approve PR
+on: pull_request_target
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  auto-approve:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    if: github.actor == 'renovate[bot]'
+    steps:
+      - name: Approve Renovate PR
+        uses: hmarr/auto-approve-action@v4.0.0
+        with:
+          review-message: "I'm **approving** this PR because it includes a patch or minor update. Let's get this merged. Thanks!"
+          github-token: ${{ secrets.GITHUB_TOKEN }}

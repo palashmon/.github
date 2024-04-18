@@ -1,0 +1,39 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    ":automergeAll",
+    ":automergePr",
+    ":disableDependencyDashboard",
+    ":enableVulnerabilityAlerts",
+    ":labels(dependencies)",
+    ":rebaseStalePrs",
+    ":semanticCommits",
+    ":semanticCommitTypeAll(chore)",
+    ":timezone(Asia/Kolkata)",
+    "group:allNonMajor",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "rebaseWhen": "conflicted",
+  "branchPrefix": "renovate/",
+  "platformAutomerge": true,
+  "automergeStrategy": "squash",
+  "rangeStrategy": "bump",
+  "major": {
+    "enabled": false
+  },
+  "packageRules": [
+    {
+      "updateTypes": ["major"],
+      "addLabels": ["semver major", "dependencies"]
+    },
+    {
+      "updateTypes": ["minor"],
+      "addLabels": ["semver minor", "dependencies"]
+    },
+    {
+      "updateTypes": ["patch", "digest", "bump"],
+      "addLabels": ["semver patch", "dependencies"]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"description": "Apply onboarding preset for use with @palashmon repos",
+	"extends": ["local>palashmon/.github"]
+}
